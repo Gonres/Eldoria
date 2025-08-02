@@ -26,16 +26,13 @@ public:
 
     int getCurrentLevel() const;
 
-    AddMerchant *getMerchant() const;
+    bool isAnyPrisonerInRange(const Player *player);
 
-    static bool isAnyPrisonerInRange(const Player *player);
-
-    static bool isAnyEnemyInRange(const Player *player);
+    bool isAnyEnemyInRange(const Player *player);
 
 private:
     int currentLevel;
     std::vector<Map *> maps;
-    AddMerchant *addMerchant;
 
     void clearCharactersFromPreviousLevel() const;
 

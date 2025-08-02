@@ -5,17 +5,7 @@
 
 class AddEnemy final : public Command {
 public:
-    explicit AddEnemy(Map *map, EnemyType type, Position position);
-
-    void addMummy(Position position);
-
-    void addGhoul(Position position);
-
-    void addGargoyle(Position position);
-
-    void addBasilisk(Position position);
-
-    void addNecromancer(Position position);
+    AddEnemy(Map *map, EnemyType type, Position position);
 
     static std::vector<Enemy *> getEnemies();
 

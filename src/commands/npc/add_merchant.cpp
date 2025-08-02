@@ -1,23 +1,21 @@
 #include "add_merchant.h"
 
-AddMerchant::AddMerchant(const std::vector<Map *> &maps) {
-    this->merchant = nullptr;
-    this->maps = maps;
+AddMerchant::AddMerchant(
+    Map *map,
+    const Position position
+) : position(position) {
+    this->map = map;
 }
 
-AddMerchant::~AddMerchant() {
-    delete merchant;
-}
-
-void AddMerchant::addMerchant(const int currentLevel, const Position position) {
-    merchant = new Merchant(position);
-    maps[currentLevel]->putCharacterInPosition(position, '$');
-}
-
-Merchant *AddMerchant::getMerchant() const {
+Merchant *AddMerchant::getMerchant() {
     return merchant;
 }
 
 void AddMerchant::setMerchantToNull() {
     merchant = nullptr;
+}
+
+void AddMerchant::execute() {
+    merchant = new Merchant(position);
+    map->putCharacterInPosition(position, '$');
 }

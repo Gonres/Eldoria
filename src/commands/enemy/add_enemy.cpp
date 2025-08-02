@@ -15,36 +15,6 @@ AddEnemy::AddEnemy(
     this->type = type;
 }
 
-void AddEnemy::addMummy(const Position position) {
-    Enemy *mummy = new Mummy(position);
-    enemies.emplace_back(mummy);
-    map->putCharacterInPosition(position, '!');
-}
-
-void AddEnemy::addGhoul(const Position position) {
-    Enemy *ghoul = new Ghoul(position);
-    enemies.emplace_back(ghoul);
-    map->putCharacterInPosition(position, '!');
-}
-
-void AddEnemy::addGargoyle(const Position position) {
-    Enemy *gargoyle = new Gargoyle(position);
-    enemies.emplace_back(gargoyle);
-    map->putCharacterInPosition(position, '!');
-}
-
-void AddEnemy::addBasilisk(const Position position) {
-    Enemy *basilisk = new Basilisk(position);
-    enemies.emplace_back(basilisk);
-    map->putCharacterInPosition(position, '!');
-}
-
-void AddEnemy::addNecromancer(const Position position) {
-    Enemy *necromancer = new Necromancer(position);
-    enemies.emplace_back(necromancer);
-    map->putCharacterInPosition(position, '!');
-}
-
 void AddEnemy::clearEnemies() {
     enemies.clear();
 }

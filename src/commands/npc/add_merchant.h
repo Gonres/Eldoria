@@ -2,24 +2,24 @@
 #define ADD_MERCHANT_H
 #include <vector>
 
+#include "../command.h"
 #include "../../domain/value_objects/merchant.h"
 #include "../../map/map.h"
 
-class AddMerchant {
+class AddMerchant final : public Command {
 public:
-    explicit AddMerchant(const std::vector<Map *> &maps);
+    AddMerchant(Map *map, Position position);
 
-    ~AddMerchant();
+    static Merchant *getMerchant();
 
-    void addMerchant(int currentLevel, Position position);
-
-    Merchant *getMerchant() const;
-
-    void setMerchantToNull();
+    static void setMerchantToNull();
 
 private:
-    Merchant *merchant;
-    std::vector<Map *> maps;
+    inline static Merchant *merchant = nullptr;
+    Map *map;
+    Position position;
+
+    void execute() override;
 };
 
 #endif //ADD_MERCHANT_H

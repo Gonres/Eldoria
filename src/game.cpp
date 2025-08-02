@@ -92,7 +92,7 @@ void Game::handleInputs() const {
         }
     }
     // Handle interaction with merchant
-    Command::execute(MerchantInteraction(levels->getMerchant()->getMerchant(),
+    Command::execute(MerchantInteraction(AddMerchant::getMerchant(),
                                          [this] { menu->changeScreenNormal(Screen::shopMain); }, player));
     // Handle interaction with prisoner
     for (Prisoner *prisoner: AddPrisoner::getPrisoners()) {
@@ -119,7 +119,7 @@ void Game::displayHelp() const {
     std::cout << "[F] Fight" << "\n";
     setColor(Colors::white);
     levels->isAnyPrisonerInRange(player) ||
-    (levels->getMerchant()->getMerchant() != nullptr && levels->getMerchant()->getMerchant()->
+    (AddMerchant::getMerchant() != nullptr && AddMerchant::getMerchant()->
      isAnyMerchantInRange(player->getPosition()))
         ? setColor(Colors::yellow)
         : setColor(Colors::white);

@@ -12,10 +12,9 @@ Position Merchant::getPosition() const {
 }
 
 bool Merchant::isAnyMerchantInRange(const Position playerPosition) const {
-    bool isMerchantInRange = false;
     if (Position::isInRangeOfOne(playerPosition.x, playerPosition.y,
                                  position.x, position.y)) {
-        isMerchantInRange = true;
+        return true;
     }
-    return isMerchantInRange;
+    return false;
 }

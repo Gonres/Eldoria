@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <unordered_map>
+#include <bits/ranges_algo.h>
 
 #include "../tools/global_settings.h"
 
@@ -29,14 +30,12 @@ Levels::Levels() {
     maps.emplace_back(new Map(8, 10, DoorPosition::bottomDoor)); //level 18
     maps.emplace_back(new Map(15, 30, DoorPosition::leftDoor)); //level 19
     maps[0]->putCharacterInPosition(Position{5, 1}, '@');
-    this->addMerchant = new AddMerchant(maps);
 }
 
 Levels::~Levels() {
     for (const Map *map: maps) {
         delete map;
     }
-    delete addMerchant;
 }
 
 void Levels::loadAllLevels() const {
@@ -108,19 +107,17 @@ int Levels::getCurrentLevel() const {
     return currentLevel;
 }
 
-AddMerchant *Levels::getMerchant() const {
-    return addMerchant;
-}
-
 void Levels::clearCharactersFromPreviousLevel() const {
     for (const Enemy *enemy: AddEnemy::getEnemies()) {
         maps[currentLevel]->clearCharacterFromPosition(enemy->getPosition());
     }
     AddEnemy::clearEnemies();
-    if (addMerchant->getMerchant() != nullptr) {
-        maps[currentLevel]->clearCharacterFromPosition(addMerchant->getMerchant()->getPosition());
-        addMerchant->setMerchantToNull();
+    Merchant *merchant = AddMerchant::getMerchant();
+    if (merchant != nullptr) {
+        maps[currentLevel]->clearCharacterFromPosition(merchant->getPosition());
+        AddMerchant::setMerchantToNull();
     }
+    delete merchant;
     for (const Prisoner *prisoner: AddPrisoner::getPrisoners()) {
         maps[currentLevel]->clearCharacterFromPosition(prisoner->getPosition());
     }
@@ -135,7 +132,7 @@ void Levels::level0() const {
 void Levels::level1() const {
     Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{2, 4}));
     Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{5, 6}));
-    Command::execute(AddPrisoner(maps[currentLevel], Position{5, 6}));
+    Command::execute(AddPrisoner(maps[currentLevel], Position{7, 6}));
 }
 
 void Levels::level2() const {
@@ -146,126 +143,125 @@ void Levels::level2() const {
 }
 
 void Levels::level3() const {
-    // addEnemy->addMummy(Position{10, 4});
-    // addEnemy->addMummy(Position{13, 8});
-    // addEnemy->addGhoul(Position{5, 8});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{10, 4}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{13, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{5, 8}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{4, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 7}));
 }
 
 void Levels::level4() const {
-    addMerchant->addMerchant(currentLevel, Position{6, 3});
+    Command::execute(AddMerchant(maps[currentLevel], Position{6, 3}));
 }
 
 void Levels::level5() const {
-    // addEnemy->addGhoul(Position{4, 12});
-    // addEnemy->addGhoul(Position{6, 8});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{4, 12}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{6, 8}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 9}));
 }
 
 void Levels::level6() const {
-    // addEnemy->addGhoul(Position{15, 8});
-    // addEnemy->addGhoul(Position{10, 6});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{10, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 9}));
 }
 
 void Levels::level7() const {
-    // addEnemy->addGargoyle(Position{15, 8});
-    // addEnemy->addGargoyle(Position{10, 3});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{10, 3}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 2}));
 }
 
 void Levels::level8() const {
-    // addEnemy->addGargoyle(Position{8, 4});
-    // addEnemy->addGhoul(Position{4, 11});
-    // addEnemy->addMummy(Position{17, 2});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{8, 4}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{4, 11}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{17, 2}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{19, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 3}));
 }
 
 void Levels::level9() const {
-    addMerchant->addMerchant(currentLevel, Position{6, 3});
+    Command::execute(AddMerchant(maps[currentLevel], Position{6, 3}));
 }
 
 void Levels::level10() const {
-    // addEnemy->addGargoyle(Position{15, 8});
-    // addEnemy->addGargoyle(Position{10, 6});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{10, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 9}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{14, 10}));
 }
 
 void Levels::level11() const {
-    // addEnemy->addGargoyle(Position{8, 4});
-    // addEnemy->addGhoul(Position{4, 11});
-    // addEnemy->addMummy(Position{17, 2});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{8, 4}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{4, 11}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::mummy, Position{17, 2}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{19, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 3}));
 }
 
 void Levels::level12() const {
-    // addEnemy->addGargoyle(Position{15, 8});
-    // addEnemy->addGargoyle(Position{10, 3});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{10, 3}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 2}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{21, 4}));
 }
 
 void Levels::level13() const {
-    // addEnemy->addBasilisk(Position{15, 8});
-    // addEnemy->addGhoul(Position{10, 6});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::basilisk, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{10, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 9}));
 }
 
 void Levels::level14() const {
-    addMerchant->addMerchant(currentLevel, Position{6, 3});
+    Command::execute(AddMerchant(maps[currentLevel], Position{6, 3}));
 }
 
 void Levels::level15() const {
-    // addEnemy->addGargoyle(Position{8, 4});
-    // addEnemy->addGhoul(Position{4, 11});
-    // addEnemy->addBasilisk(Position{17, 2});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{8, 4}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{4, 11}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::basilisk, Position{17, 2}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{19, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 3}));
 }
 
 void Levels::level16() const {
-    // addEnemy->addGargoyle(Position{15, 8});
-    // addEnemy->addBasilisk(Position{10, 3});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::gargoyle, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::basilisk, Position{10, 3}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{25, 2}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{18, 5}));
 }
 
 void Levels::level17() const {
-    // addEnemy->addBasilisk(Position{15, 8});
-    // addEnemy->addGhoul(Position{10, 6});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::basilisk, Position{15, 8}));
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::ghoul, Position{10, 6}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{12, 9}));
     Command::execute(AddPrisoner(maps[currentLevel], Position{9, 5}));
 }
 
 void Levels::level18() const {
-    addMerchant->addMerchant(currentLevel, Position{6, 3});
+    Command::execute(AddMerchant(maps[currentLevel], Position{6, 3}));
 }
 
 void Levels::level19() const {
-    // addEnemy->addNecromancer(Position{4, 5});
+    Command::execute(AddEnemy(maps[currentLevel], EnemyType::necromancer, Position{4, 5}));
 }
 
 bool Levels::isAnyPrisonerInRange(const Player *player) {
-    bool isPrisonerInRange = false;
-    for (const Prisoner *prisoner: AddPrisoner::getPrisoners()) {
-        if (Position::isInRangeOfOne(player->getPosition().x, player->getPosition().y,
-                                     prisoner->getPosition().x, prisoner->getPosition().y)) {
-            isPrisonerInRange = true;
-        }
-    }
-    return isPrisonerInRange;
+    return std::ranges::any_of(
+        AddPrisoner::getPrisoners(),
+        [player](const Prisoner *prisoner) {
+            return Position::isInRangeOfOne(
+                player->getPosition().x,
+                player->getPosition().y,
+                prisoner->getPosition().x,
+                prisoner->getPosition().y);
+        });
 }
 
 bool Levels::isAnyEnemyInRange(const Player *player) {
-    bool isEnemyInRange = false;
-    for (const Enemy *enemy: AddEnemy::getEnemies()) {
-        if (player->isInRange(player->getPosition(), enemy->getPosition())) {
-            isEnemyInRange = true;
-        }
-    }
-    return isEnemyInRange;
+    return std::ranges::any_of(
+        AddEnemy::getEnemies(),
+        [player](const Enemy *enemy) {
+            return player->isInRange(player->getPosition(), enemy->getPosition());
+        });
 }
