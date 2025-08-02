@@ -4,7 +4,7 @@
 
 #ifndef GLOBAL_SETTINGS_H
 #define GLOBAL_SETTINGS_H
-#include <ctime>
+#include <ctime>s
 #include <windows.h>
 
 class GlobalSettings {
