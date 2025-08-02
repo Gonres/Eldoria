@@ -1,8 +1,8 @@
 #include "levels.h"
 
+#include <algorithm>
 #include <functional>
 #include <unordered_map>
-#include <bits/ranges_algo.h>
 
 #include "../tools/global_settings.h"
 
