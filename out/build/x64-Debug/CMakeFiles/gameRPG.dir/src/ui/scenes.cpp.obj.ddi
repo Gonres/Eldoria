@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\gameRPG.dir\\src\\ui\\scenes.cpp.obj",
+            "outputs": [
+                "C:\\Users\\ivo\\Eldoria\\out\\build\\x64-Debug\\vc140.pdb",
+                "CMakeFiles\\gameRPG.dir\\src\\ui\\scenes.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

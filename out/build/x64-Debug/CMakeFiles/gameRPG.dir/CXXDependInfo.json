@@ -1,0 +1,202 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Users/ivo/Eldoria/out/build/x64-Debug",
+	"dir-cur-src" : "C:/Users/ivo/Eldoria",
+	"dir-top-bld" : "C:/Users/ivo/Eldoria/out/build/x64-Debug",
+	"dir-top-src" : "C:/Users/ivo/Eldoria",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/ivo/Eldoria/out/build/x64-Debug/CMakeFiles/gameRPG.dir",
+	"sources" : 
+	{
+		"CMakeFiles/gameRPG.dir/src/application.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/application.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/combat_system/combat.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/combat_system/combat.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/combat_system/fight_state.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/combat_system/fight_state.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/combat_system/passive_state.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/combat_system/passive_state.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/enemy/add_enemy.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/enemy/add_enemy.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/enemy/kill_enemy.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/enemy/kill_enemy.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/enemy/loot_enemy.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/enemy/loot_enemy.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/interaction/healing_interaction.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/interaction/healing_interaction.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/interaction/merchant_interaction.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/interaction/merchant_interaction.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/interaction/prisoner_interaction.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/interaction/prisoner_interaction.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/npc/add_merchant.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/npc/add_merchant.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/commands/npc/add_prisoner.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/commands/npc/add_prisoner.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/basilisk.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/basilisk.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/enemy.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/enemy.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/entity.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/entity.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/gargoyle.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/gargoyle.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/ghoul.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/ghoul.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/mummy.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/mummy.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/necromancer.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/necromancer.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/entities/player.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/entities/player.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/value_objects/items/armor.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/value_objects/items/armor.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/value_objects/items/potion.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/value_objects/items/potion.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/value_objects/items/weapon.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/value_objects/items/weapon.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/value_objects/merchant.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/value_objects/merchant.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/domain/value_objects/prisoner.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/domain/value_objects/prisoner.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/game.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/game.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/main.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/map/levels.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/map/levels.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/map/map.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/map/map.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/map/tile.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/map/tile.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/movement/enemy_movement.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/movement/enemy_movement.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/movement/player_movement.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/movement/player_movement.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/tools/global_settings.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/tools/global_settings.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/ui/menu.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/ui/menu.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/ui/scenes.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/ui/scenes.cpp"
+		},
+		"CMakeFiles/gameRPG.dir/src/ui/shop.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/ivo/Eldoria/src/ui/shop.cpp"
+		}
+	}
+}
